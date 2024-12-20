@@ -1,0 +1,86 @@
+<link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Lato:wght@400;500&family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet">
+
+<app-header></app-header>
+
+<!-- Section hiển thị thông tin người dùng bên trái -->
+<div class="container user-profile-container fade-in mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="user-info-card">
+                <div class="user-info-header text-center">
+                    <h2 class="product-header fade-in">Thông tin người dùng</h2>
+                    <h4 class="product-header fade-in">Quản lý hồ sơ để bảo mật tài khoản</h4>
+                </div>
+                <div class="user-info">
+                    <div class="info-row">
+                        <label for="fullname" class="form-label">Họ và tên</label>
+                        <p id="fullname" class="form-control-static">{{ user.fullname }}</p>
+                    </div>
+                    <div class="info-row">
+                        <label for="address" class="form-label">Địa chỉ</label>
+                        <p id="address" class="form-control-static">{{ user.address }}</p>
+                    </div>
+                    <div class="info-row">
+                        <label for="date_of_birth" class="form-label">Ngày sinh</label>
+                        <p id="date_of_birth" class="form-control-static">{{ user.date_of_birth | date:'dd/MM/yyyy' }}
+                        </p>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <button class="btn btn-primary" (click)="navigateToEditProfile()">Thay đổi hồ sơ người dùng</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section hiển thị lịch sử đơn hàng bên phải -->
+        <div class="col-md-6 fade-in">
+            <div class="order-history-card p-4">
+                <h2 class="text-center mb-4 product-header">Lịch sử đơn hàng</h2>
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Họ tên</th>
+                            <th>Số điện thoại</th>
+                            <th>Địa chỉ</th>
+                            <th>Thời gian đặt</th>
+                            <th>Trạng thái</th>
+                            <th>Tổng tiền</th>
+                            <th>Chi tiết đơn hàng</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let order of orders; let i = index" class="order-row">
+                            <td>{{ i + 1 }}</td>
+                            <td>{{ order.fullname }}</td>
+                            <td>{{ order.phone_number }}</td>
+                            <td>{{ order.address }}</td>
+                            <td>{{ order.order_date }}</td>
+                            <td>{{ order.status }}</td>
+                            <td>{{ order.total_money }}</td>
+                            <td>
+                                <button class="btn btn-secondary" (click)="toggleMenu(order)">
+                                    <i class="fa fa-bars"></i>
+                                </button>
+                                <div *ngIf="menuState[order.id]" class="popup-menu">
+                                    <button class="btn btn-primary" (click)="viewDetails(order)">
+                                        Xem Chi Tiết
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr *ngIf="orders.length === 0">
+                            <td colspan="8" class="text-center">Chưa có đơn hàng nào.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<app-footer></app-footer>

@@ -1,0 +1,61 @@
+<div class="container-fluid">
+  <header class="header marquee text-white d-flex justify-content-between dune">
+    <h1 class="ms-5 my-3 marquee__content ">THANH HÓA SHOP</h1>
+    <!-- Logout Button -->
+    <button class="btn btn-danger btn-md btn-logout" (click)="logout()">Logout</button>
+  </header>
+  <div class="row g-0">
+    <nav id="sidebar" class="col-md-2 col-lg-2 d-md-block bg-light sidebar dune">
+      <div class="position-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link"
+               routerLink="/admin/thongke"
+               routerLinkActive="active-link">
+              <i class="fa fa-line-chart icon"></i> Statistics
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"
+               routerLink="/admin/users"
+               routerLinkActive="active-link">
+              <i class="fa-solid fa-user icon"></i> Users
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"
+               routerLink="/admin/orders"
+               routerLinkActive="active-link"
+               [routerLinkActiveOptions]="{ exact: false }">
+              <i class="fa-solid fa-money-bill icon"></i> Orders
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"
+               routerLink="/admin/categories"
+               routerLinkActive="active-link">
+              <i class="fa-solid fa-layer-group icon"></i> Categories
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"
+               routerLink="/admin/products"
+               routerLinkActive="active-link">
+              <i class="fa-solid fa-mobile-button icon"></i> Products
+            </a>
+          </li>
+        </ul>        
+      </div>
+    </nav>
+    <div class="col-md-8 col-lg-10 overflow-auto content-wrapper">
+      <!--
+      <ng-container [ngSwitch]="adminComponent">
+        <app-order-admin *ngSwitchCase="'orders'"></app-order-admin>
+        <app-product-admin *ngSwitchCase="'products'"></app-product-admin>
+        <app-category-admin *ngSwitchCase="'categories'"></app-category-admin>                    
+      </ng-container>
+      -->
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

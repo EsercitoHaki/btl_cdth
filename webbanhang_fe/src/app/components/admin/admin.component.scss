@@ -1,0 +1,63 @@
+@import "../../styles/shared-styles.scss";
+
+.container-fluid {
+    background-color: #F3F3F3;
+    padding-left: 0 !important; /* Remove left padding */
+    padding-right: 0 !important; /* Remove right padding */
+}
+
+.btn-logout{
+    z-index: 99999;
+}
+
+.header {
+    background-color: #333;
+    /* Header background color */
+    color: $shopapp-background-color;
+    /* Text color */
+    font-weight: bold;
+    text-align: center;
+    /* Center-align text in the header */
+}
+
+#sidebar {
+    background-color: #BBBBBB !important; /* Primary color */
+    height: 100vh; /* Ensure full height */
+    position: sticky; /* Make sidebar sticky */
+    top: 0; /* Sticky position at the top of the screen */
+    overflow-y: auto; /* Add scrollbars if content overflows */
+    z-index: 1; /* Ensure sidebar stays on top of other content */
+}
+
+/* Custom CSS for sidebar links */
+#sidebar a {
+    color: #333; /* Text color for links */
+    padding: 20px 15px; /* Add padding to links for spacing */
+}
+
+/* Custom CSS for active link */
+#sidebar a.active {
+    font-weight: bold; /* Highlight active link */
+}
+
+/* Change background color on hover */
+#sidebar a:hover {
+    background-color: $product; /* Change the background color on hover */
+}
+
+#sidebar a.active-link {
+    background-color: $product; /* Nền màu đỏ */
+    color: white;          /* Chữ trắng */
+    font-weight: bold;     /* Chữ in đậm */
+}
+
+.icon {
+    font-size: 1.25rem;
+    padding: 10px;
+}
+
+.content-wrapper {
+display: flex;
+justify-content: center; /* Center horizontally */
+align-items: center;
+}

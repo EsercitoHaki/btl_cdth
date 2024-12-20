@@ -1,0 +1,96 @@
+@import '../../../styles/shared-styles.scss';
+
+.table {
+  background-color: rgb(250, 246, 246); 
+  border-radius: 12px;
+  overflow: hidden; 
+  text-align: center;
+  color: #333;
+
+  // Header của bảng
+  thead {
+      background-color: rgba(255, 255, 255, 0.6); 
+      color: #fff;
+
+      th {
+          padding: 12px;
+          font-weight: 600;
+          // text-transform: uppercase;
+          border: none;
+      }
+  }
+
+
+  tbody {
+      tr {
+          transition: background-color 0.3s ease;
+
+          td {
+              padding: 10px;
+              border: none;
+              background-color: rgba(220, 220, 220, 0.3); 
+          }
+
+          // Hiệu ứng hover
+          &:hover {
+              background-color: rgba(180, 180, 180, 0.4); 
+          }
+      }
+
+  
+      tr.no-orders {
+          td {
+              color: #777;
+              // font-style: italic;
+              background-color: rgba(200, 200, 200, 0.2);
+          }
+      }
+  }
+}
+
+
+/* Style for the popup menu */
+.popup-menu {
+  width: min-content;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.popup-menu button {
+  margin-bottom: 5px;
+}
+
+.popup-menu button:last-child {
+  margin-bottom: 0;
+}
+
+.btn-secondary {
+  font-size: 18px;
+  padding: 5px 10px;
+}
+
+.btn-primary {
+  padding: 12px  ;
+  background: linear-gradient(to right,  #727272, #e24747);
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: linear-gradient(to left,  #727272, #e24747);
+    transform: scale(1.05); 
+    box-shadow: 0 4px 12px rgba(108, 92, 231, 0.3); 
+  }
+
+  &:active {
+    background: linear-gradient(to right,  #727272, #e24747);
+    transform: scale(1); 
+    box-shadow: none;
+  }
+}

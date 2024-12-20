@@ -1,0 +1,51 @@
+<div class="container-fluid">
+  <h1 class="fw-bold display-2">Thống kê</h1>
+
+
+  <!-- Cards -->
+  <div class="row mt-4">
+    <div class="col-sm-6">
+      <div class="card text-center text-white sale">
+        <div class="card-body">
+          <h3 class="card-title row justify-content-center">Total Sales</h3>
+          <div class="row">
+            <p class="card-text display-5 col-8">{{ totalSales | currency:'VND' }}</p>
+            <i class="fa-solid fa-dollar-sign col-4 "></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="card text-center text-white order">
+        <div class="card-body">
+          <h3 class="card-title row justify-content-center">Total Orders</h3>
+          <div class="row">
+            <p class="card-text display-5 col-7">{{ totalOrders }}</p>
+            <i class="fa-solid fa-sack-dollar col-4"></i>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="card text-center text-white account">
+        <div class="card-body">
+          <h3 class="card-title row justify-content-center">Total Accounts</h3>
+          <div class="row">
+            <p class="card-text display-5 col-7">{{ totalAccounts }}</p>
+            <i class="fa-solid fa-users col-4"></i>
+          
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="display-6 mt-5 fw-bold">Doanh thu 3 năm gần nhất</p>
+  <canvas #salesChart></canvas>
+  <div>
+    <p class="display-6 mt-5 fw-bold">Top 5 sản phẩm bán chạy nhất</p>
+    <canvas #topProductsChart></canvas>
+  </div>
+  
+</div>

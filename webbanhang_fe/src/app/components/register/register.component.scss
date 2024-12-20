@@ -1,0 +1,132 @@
+@import "../../styles/shared-styles.scss";
+.container {
+    color: $regiter-text;  
+}
+
+.register-form {
+    background-color: $register-bg;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 500px;
+    align-items: center;
+    justify-content: center;
+}
+
+.register-header {
+    text-align: center;
+    color: $regiter-text;
+    margin-bottom: 20px;
+
+}
+
+.label-text {
+    color: $regiter-text;
+}
+
+.form-control {
+    border: none;
+    color: $regiter-text;
+}
+
+.form-control:focus {
+    color: $regiter-text;
+    outline: none;
+    box-shadow: none;
+    border-color: transparent;
+    padding-left: 0;
+}
+
+.password-field {
+    position: relative;
+}
+
+.password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    color: #333;
+    cursor: pointer;
+}
+//
+.input-container {
+    position: relative;
+    display: inline-block;
+    width: 100%; /* Đảm bảo container theo chiều rộng input */
+}
+
+.input-container input {
+    width: 100%;
+    padding-right: 30px; /* Chừa không gian cho icon */
+}
+
+.input-container i {
+    position: absolute;
+    top: 50%; /* Căn giữa icon theo chiều dọc so với input */
+    right: 10px; /* Cách bên phải 10px */
+    transform: translateY(-5px); /* Điều chỉnh vị trí chính xác */
+    cursor: pointer;
+}
+
+
+.checkbox-text {
+    color: $register-checkbox;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+/* Màu checkbox khi được chọn */
+.checkbox-text input[type="checkbox"]:checked {
+    border-color: $regiter-text;
+    background-color: $register-checkbox;
+}
+
+input[type="password"]::-webkit-clear-button,
+input[type="password"]::-webkit-password-toggle {
+  display: none; /* Ẩn icon không mong muốn từ trình duyệt */
+}
+
+.form-check-input {
+    margin-right: 5px;
+}
+
+.register-link {
+    color: $register-link;
+    text-decoration: none;
+}
+
+.register-button {
+    background: linear-gradient(to right,  #333, #e24747);
+    color: $register-bg;
+    border-radius: 30px;
+    width: 100%;
+    padding: 10px 0;
+    margin-top: 20px;
+    border: none;
+}
+
+.divider {
+    height: 1px;
+    background-color: $register-devider ;
+    margin: 20px;
+}
+
+.divider-nospace {
+    border-top: 1px solid $regiter-text;
+}
+
+.form-control::placeholder {
+    color: $regiter-text;
+    opacity: 0.5;
+}
+
+.form-control:-ms-input-placeholder {
+    color: $regiter-text;
+    opacity: 0.5;
+}
+
+.form-control::-ms-input-placeholder {
+    color: $regiter-text;
+    opacity: 0.5;
+}
